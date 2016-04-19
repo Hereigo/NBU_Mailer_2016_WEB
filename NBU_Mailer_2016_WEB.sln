@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NBU_Mailer_2016_WEB", "NBU_Mailer_2016_WEB\NBU_Mailer_2016_WEB.csproj", "{2FC6074C-CB67-4798-8477-C793740210A0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NBU_Mailer_2016_WEB", "NBU_Mailer_2016_WEB\NBU_Mailer_2016_WEB.csproj", "{0F4244C5-6444-48E8-B0A2-EEA1EBF492F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2FC6074C-CB67-4798-8477-C793740210A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2FC6074C-CB67-4798-8477-C793740210A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2FC6074C-CB67-4798-8477-C793740210A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2FC6074C-CB67-4798-8477-C793740210A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F4244C5-6444-48E8-B0A2-EEA1EBF492F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F4244C5-6444-48E8-B0A2-EEA1EBF492F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F4244C5-6444-48E8-B0A2-EEA1EBF492F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F4244C5-6444-48E8-B0A2-EEA1EBF492F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
