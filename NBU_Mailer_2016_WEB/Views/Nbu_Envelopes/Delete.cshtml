@@ -1,0 +1,104 @@
+﻿@model NBU_Mailer_2016_WEB.DAL.NBU_ENVELOPES
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>NBU_ENVELOPES</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SPRUSNBU_BANKS.IDHOST)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SPRUSNBU_BANKS.IDHOST)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FROM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FROM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FILE_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FILE_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FILE_SIZE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FILE_SIZE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FILE_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FILE_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATE_SENT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE_SENT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATE_DELIV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE_DELIV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ENV_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ENV_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ENV_PATH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ENV_PATH)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

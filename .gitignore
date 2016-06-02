@@ -1,5 +1,6 @@
 ## MY OWN RULES :
 Git_Ignore*.*
+ConnectionStrings.config
 NLog.config
 Console_TEST_555/
 Database_Test/

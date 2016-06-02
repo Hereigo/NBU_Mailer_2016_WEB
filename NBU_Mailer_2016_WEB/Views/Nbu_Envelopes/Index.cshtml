@@ -1,0 +1,87 @@
+﻿@model IEnumerable<NBU_Mailer_2016_WEB.DAL.NBU_ENVELOPES>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SPRUSNBU_BANKS.IDHOST)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FROM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FILE_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FILE_SIZE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FILE_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATE_SENT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATE_DELIV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ENV_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ENV_PATH)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SPRUSNBU_BANKS.IDHOST)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FROM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FILE_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FILE_SIZE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FILE_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATE_SENT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATE_DELIV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ENV_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ENV_PATH)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,74 @@
+﻿@model NBU_Mailer_2016_WEB.DAL.SPRUSNBU_BANKS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SPRUSNBU_BANKS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDHOST)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDHOST)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FNHOST)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FNHOST)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MFOM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MFOM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OKPO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OKPO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KTELE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KTELE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KFASE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KFASE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PARTNER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PARTNER)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

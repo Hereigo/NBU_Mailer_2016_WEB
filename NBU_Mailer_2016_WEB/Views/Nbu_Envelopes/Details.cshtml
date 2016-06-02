@@ -1,0 +1,98 @@
+﻿@model NBU_Mailer_2016_WEB.DAL.NBU_ENVELOPES
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NBU_ENVELOPES</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SPRUSNBU_BANKS.IDHOST)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SPRUSNBU_BANKS.IDHOST)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FROM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FROM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FILE_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FILE_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FILE_SIZE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FILE_SIZE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FILE_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FILE_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATE_SENT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE_SENT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATE_DELIV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE_DELIV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ENV_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ENV_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ENV_PATH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ENV_PATH)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
