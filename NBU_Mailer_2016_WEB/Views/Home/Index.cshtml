@@ -8,6 +8,21 @@
     <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
 
+<style>
+    body {
+  counter-reset: my-awesome-counter;
+}
+.cntd {
+  counter-increment: my-awesome-counter;
+}
+.cntd:before {
+  content: counter(my-awesome-counter);
+}
+tr:last-child .cntd {
+    background: #ff0000;
+}
+</style>
+
 <div class="row">
     <div class="col-md-4">
         <h2>Getting started</h2>
@@ -19,9 +34,25 @@
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+        <table>
+            <tr>
+                <td class="cntd"></td>
+                <td>...</td>
+                <td>Бла-бла-бла...</td>
+            </tr>
+            <tr>
+                <td class="cntd"></td>
+                <td>...</td>
+                <td>Бла-бла-бла...</td>
+            </tr>
+            <tr>
+                <td class="cntd"></td>
+                <td>...</td>
+                <td>Бла-бла-бла...</td>
+            </tr>
+        </table>
+
     </div>
     <div class="col-md-4">
         <h2>Web Hosting</h2>

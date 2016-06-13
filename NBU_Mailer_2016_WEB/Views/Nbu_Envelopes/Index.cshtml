@@ -6,14 +6,15 @@
 
 <h2>Index</h2>
 
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>*@
+
 <table class="table">
     <tr>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.SPRUSNBU_BANKS.IDHOST)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.FROM)
         </th>
@@ -21,19 +22,19 @@
             @Html.DisplayNameFor(model => model.TO)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FILE_NAME)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FILE_SIZE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FILE_DATE)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.DATE_SENT)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.DATE_DELIV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FILE_NAME)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.FILE_SIZE)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.FILE_DATE)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ENV_NAME)
@@ -46,23 +47,14 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.SPRUSNBU_BANKS.IDHOST)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.FROM)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.TO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FILE_NAME)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FILE_SIZE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FILE_DATE)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DATE_SENT)
@@ -71,15 +63,24 @@
             @Html.DisplayFor(modelItem => item.DATE_DELIV)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.FILE_NAME)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.FILE_SIZE)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.FILE_DATE)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.ENV_NAME)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ENV_PATH)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.ID }) |*@
+            @Html.ActionLink("Details", "Details", new { id=item.ID })
+            @* | @Html.ActionLink("Delete", "Delete", new { id=item.ID })*@
         </td>
     </tr>
 }

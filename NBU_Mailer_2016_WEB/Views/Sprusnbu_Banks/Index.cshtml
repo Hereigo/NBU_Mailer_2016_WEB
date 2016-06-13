@@ -4,13 +4,30 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<style>
+    body {
+        counter-reset: my-counter;
+    }
 
-<p>
+    .cntd {
+        counter-increment: my-counter;
+    }
+
+        .cntd:before {
+            content: counter(my-counter);
+        }
+</style>
+
+<h2 id="forCnt">Записей в таблице : </h2>
+
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+</p>*@
+
+<table class="table" id="envelopesTabel">
     <tr>
+        <th>
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.IDHOST)
         </th>
@@ -35,35 +52,43 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.IDHOST)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FNHOST)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MFOM)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OKPO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.KTELE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.KFASE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PARTNER)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="cntd"></td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDHOST)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FNHOST)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MFOM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OKPO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KTELE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KFASE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PARTNER)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.ID }) |*@
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) 
+                @* | @Html.ActionLink("Delete", "Delete", new { id = item.ID })*@
+            </td>
+        </tr>
+    }
 
 </table>
+
+<script>
+    var rowsCnt = document.getElementById("envelopesTabel").rows.length - 1;
+    var tableHeaderTxt = document.getElementById("forCnt").innerHTML;
+    document.getElementById("forCnt").innerHTML = tableHeaderTxt + rowsCnt;
+</script>

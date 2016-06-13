@@ -134,8 +134,8 @@
     <Compile Include="Controllers\Nbu_EnvelopesController.cs" />
     <Compile Include="Controllers\Sprusnbu_BanksController.cs" />
     <Compile Include="DAL\Model1.cs" />
-    <Compile Include="DAL\NBU_ENVELOPES.cs" />
-    <Compile Include="DAL\SPRUSNBU_BANKS.cs" />
+    <Compile Include="Models\NBU_ENVELOPES.cs" />
+    <Compile Include="Models\SPRUSNBU_BANKS.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -150,6 +150,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ConnectionStrings.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -162,6 +163,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="SELECT_JOIN.SQL" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -189,7 +191,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

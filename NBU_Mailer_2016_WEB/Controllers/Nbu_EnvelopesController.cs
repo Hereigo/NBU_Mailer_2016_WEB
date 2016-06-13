@@ -19,9 +19,14 @@ namespace NBU_Mailer_2016_WEB.Controllers
         {
             var nBU_ENVELOPES = db.NBU_ENVELOPES.Include(n => n.SPRUSNBU_BANKS);
 
-            var fewNBU_envelopes = from fewEnv in nBU_ENVELOPES where fewEnv.ID > 1180 select fewEnv;
+            DateTime fromDate = DateTime.Now.AddDays(-3);
 
-            return View(fewNBU_envelopes.ToList());
+            var fewNBU_envelopes = from fewEnv in nBU_ENVELOPES where fewEnv.DATE_SENT > fromDate select fewEnv;
+
+            var rez = fewNBU_envelopes.ToList().OrderByDescending(f => f.DATE_SENT);
+
+            return View(rez);
+
             //return View(nBU_ENVELOPES.ToList());
         }
 
