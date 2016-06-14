@@ -25,10 +25,13 @@ namespace NBU_Mailer_2016_WEB.DAL
         [ScaffoldColumn(false)]
         public byte[] FILE_BODY { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? FILE_DATE { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:dd/MMM | HH:mm}")]
         public DateTime? DATE_SENT { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:dd/MMM | HH:mm}")]
         public DateTime? DATE_DELIV { get; set; }
 
         [StringLength(15)]
