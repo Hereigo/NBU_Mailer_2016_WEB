@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using NBU_Mailer_2016_WEB.DAL;
+using System.IO;
+using System.Data.SqlClient;
 
 namespace NBU_Mailer_2016_WEB.Controllers
 {
@@ -45,6 +47,51 @@ namespace NBU_Mailer_2016_WEB.Controllers
             return View(nBU_ENVELOPES);
         }
 
+
+        private byte[] MessageAlert(string msg)
+        {
+            string scriptStr = "<html><script>alert(\" + msg + \");</script></html>";
+
+            byte[] scriptBytes = new byte[scriptStr.Length * sizeof(char)];
+
+            System.Buffer.BlockCopy(scriptStr.ToCharArray(), 0, scriptBytes, 0, scriptBytes.Length);
+
+            return scriptBytes;
+        }
+
+
+        // GET: Nbu_Envelopes/ FILE OPEN /5
+
+        public FileContentResult FileOpen(int? id)
+        {
+            byte[] fileBody;
+            string fileName = "";
+
+            try
+            {
+                var record = from env in db.NBU_ENVELOPES where env.ID == id select env;
+
+                fileName = record.First().FILE_NAME;
+
+                fileBody = (byte[])record.First().FILE_BODY.ToArray();
+
+                return File(fileBody, "text", fileName);
+
+            }
+            catch (Exception)
+            {
+                string scriptStr = "<html><script>alert(\"File : " + id + " - " + fileName + " - Not found!\");</script></html>";
+
+                byte[] scriptBytes = new byte[scriptStr.Length * sizeof(char)];
+
+                System.Buffer.BlockCopy(scriptStr.ToCharArray(), 0, scriptBytes, 0, scriptBytes.Length);
+
+                return File(scriptBytes, "text/html");
+            }
+        }
+
+
+
         // GET: Nbu_Envelopes/Create
         public ActionResult Create()
         {
@@ -57,7 +104,9 @@ namespace NBU_Mailer_2016_WEB.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,FROM,TO,FILE_NAME,FILE_SIZE,FILE_BODY,FILE_DATE,DATE_SENT,DATE_DELIV,ENV_NAME,ENV_PATH,SPRUSNBU_BANK_ID")] NBU_ENVELOPES nBU_ENVELOPES)
+        public ActionResult Create([Bind(Include =
+            "ID,FROM,TO,FILE_NAME,FILE_SIZE,FILE_BODY,FILE_DATE,DATE_SENT,DATE_DELIV,ENV_NAME,ENV_PATH,SPRUSNBU_BANK_ID")]
+        NBU_ENVELOPES nBU_ENVELOPES)
         {
             if (ModelState.IsValid)
             {

@@ -4,6 +4,7 @@ ConnectionStrings.config
 NLog.config
 Console_TEST_555/
 Database_Test/
+!!!__TODO__!!!.txt
 desktop.ini
 
 ## Ignore Visual Studio temporary files, build results, and
