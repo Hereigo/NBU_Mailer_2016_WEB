@@ -6,15 +6,19 @@
 
 <h2>Index</h2>
 
+<style>
+    html > /**/ body .todayRow {
+        background-color: gainsboro;
+        font-weight: 600;
+    }
+</style>
+
 @*<p>
         @Html.ActionLink("Create New", "Create")
     </p>*@
 
 <table class="table">
     <tr>
-        @*<th>
-                @Html.DisplayNameFor(model => model.SPRUSNBU_BANKS.IDHOST)
-            </th>*@
         <th>
             @Html.DisplayNameFor(model => model.FROM)
         </th>
@@ -30,9 +34,6 @@
         <th>
             @Html.DisplayNameFor(model => model.FILE_NAME)
         </th>
-        @*<th>
-                @Html.DisplayNameFor(model => model.FILE_SIZE)
-            </th>*@
         <th>
             @Html.DisplayNameFor(model => model.FILE_DATE)
         </th>
@@ -47,46 +48,69 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            @*<td>
-                    @Html.DisplayFor(modelItem => item.SPRUSNBU_BANKS.IDHOST)
-                </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.FROM)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TO)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DATE_SENT)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DATE_DELIV)
-            </td>
-            <td>
-                @*@Url.Action() ??? *@
-                @*@Url.Action() ??? *@
-                @Html.ActionLink(item.FILE_NAME, "FileOpen", new { id = item.ID }, new { target = "_blank" })
-                @*@Html.DisplayFor(modelItem => item.FILE_NAME)*@
-            </td>
-            @*<td>
-                    @Html.DisplayFor(modelItem => item.FILE_SIZE)
-                </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.FILE_DATE)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ENV_NAME)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ENV_PATH)
-            </td>
-            <td>
-                @*@Html.ActionLink("Edit", "Edit", new { id=item.ID }) |*@
-                @Html.ActionLink("Details", "Details", new { id = item.ID })
-                @* | @Html.ActionLink("Delete", "Delete", new { id=item.ID })*@
-            </td>
-        </tr>
+        if (DateTime.Now.Date == ((DateTime)item.DATE_SENT).Date)
+        {
+            <tr class="todayRow">
+                <td>
+                    @Html.DisplayFor(modelItem => item.FROM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DATE_SENT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DATE_DELIV)
+                </td>
+                <td>
+                    @Html.ActionLink(item.FILE_NAME, "FileOpen", new { id = item.ID }, new { target = "_blank" })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FILE_DATE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ENV_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ENV_PATH)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.ID })
+                </td>
+            </tr>
+        }
+        else
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FROM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DATE_SENT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DATE_DELIV)
+                </td>
+                <td>
+                    @Html.ActionLink(item.FILE_NAME, "FileOpen", new { id = item.ID }, new { target = "_blank" })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FILE_DATE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ENV_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ENV_PATH)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.ID })
+                </td>
+            </tr>
+        }
     }
-
 </table>

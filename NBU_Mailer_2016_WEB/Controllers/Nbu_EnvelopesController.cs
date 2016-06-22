@@ -80,14 +80,6 @@ namespace NBU_Mailer_2016_WEB.Controllers
             }
             catch (Exception)
             {
-<<<<<<< HEAD
-=======
-                // TODO:
-                // INSERT FILE NAME & FILE ID IN TO MSG !
-                // INSERT FILE NAME & FILE ID IN TO MSG !
-                // INSERT FILE NAME & FILE ID IN TO MSG !
-
->>>>>>> f75056ed155d25a4c625372722c8acad62d16d85
                 string scriptStr = "<html><script>alert(\"File : " + id + " - " + fileName + " - Not found!\");</script></html>";
 
                 byte[] scriptBytes = new byte[scriptStr.Length * sizeof(char)];
