@@ -23,6 +23,11 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("SPRUSNBU_BANKS", "Index", "SPRUSNBU_BANKS")</li>
                     <li>@Html.ActionLink("NBU_ENVELOPES", "Index", "NBU_ENVELOPES")</li>
+                    @*TEMPORARY*@
+                    <li>
+                        @Html.Partial("NoGitTestView")
+                    </li>
+                    @*TEMPORARY*@
                 </ul>
                 <p class="nav navbar-text navbar-right">Hello, @User.Identity.Name!</p>
             </div>
