@@ -21,11 +21,11 @@ namespace NBU_Mailer_2016_WEB.Controllers
         {
             var nBU_ENVELOPES = db.NBU_ENVELOPES.Include(n => n.SPRUSNBU_BANKS);
 
-            DateTime fromDate = DateTime.Now.AddDays(-3);
+            DateTime fromDate = DateTime.Now.AddDays(-7);
 
             var fewNBU_envelopes = from fewEnv in nBU_ENVELOPES where fewEnv.DATE_SENT > fromDate select fewEnv;
 
-            var rez = fewNBU_envelopes.ToList().OrderByDescending(f => f.DATE_SENT);
+            var rez = fewNBU_envelopes.ToList().OrderByDescending(f => f.DATE_SENT).Take(20);
 
             return View(rez);
 
