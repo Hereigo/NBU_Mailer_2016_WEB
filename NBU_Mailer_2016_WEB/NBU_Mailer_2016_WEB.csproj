@@ -153,6 +153,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ConnectionStrings.config" />
     <None Include="Properties\PublishProfiles\164_nbu_mvc4_Debug.pubxml" />
+    <None Include="Properties\PublishProfiles\164_nbu_mvc4_Release.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -166,7 +167,9 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="SELECT_JOIN.SQL" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
