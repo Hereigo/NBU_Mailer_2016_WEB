@@ -1,4 +1,4 @@
-namespace NBU_Mailer_2016_WEB.DAL
+﻿namespace NBU_Mailer_2016_WEB.DAL
 {
     using System;
     using System.Collections.Generic;
@@ -22,6 +22,7 @@ namespace NBU_Mailer_2016_WEB.DAL
 
         [Required]
         [StringLength(50)]
+        [Display(Name = "Кореспондент")]
         public string FNHOST { get; set; }
 
         public int? MFOM { get; set; }

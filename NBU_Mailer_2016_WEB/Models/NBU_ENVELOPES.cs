@@ -1,4 +1,4 @@
-namespace NBU_Mailer_2016_WEB.DAL
+﻿namespace NBU_Mailer_2016_WEB.DAL
 {
     using System;
     using System.Collections.Generic;
@@ -11,12 +11,15 @@ namespace NBU_Mailer_2016_WEB.DAL
         public int ID { get; set; }
 
         [StringLength(15)]
+        [Display(Name = "Від кого")]
         public string FROM { get; set; }
 
         [StringLength(15)]
+        [Display(Name = "Кому")]
         public string TO { get; set; }
 
         [StringLength(15)]
+        [Display(Name = "Файл")]
         public string FILE_NAME { get; set; }
 
         public int? FILE_SIZE { get; set; }
@@ -25,16 +28,21 @@ namespace NBU_Mailer_2016_WEB.DAL
         [ScaffoldColumn(false)]
         public byte[] FILE_BODY { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Display(Name = "Був змінений")]
+        [DisplayFormat(DataFormatString = "{0:dd/MMM HH:mm}")]
         public DateTime? FILE_DATE { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:dd/MMM | HH:mm}")]
+        [Display(Name = "Відправлено")]
+        [DisplayFormat(DataFormatString = "{0:dd/MMM HH:mm}")]
         public DateTime? DATE_SENT { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:dd/MMM | HH:mm}")]
+        [Display(Name = "Отримано")]
+        [DisplayFormat(DataFormatString = "{0:dd/MMM HH:mm}")]
         public DateTime? DATE_DELIV { get; set; }
 
         [StringLength(15)]
+        [Display(Name = "Конверт")]
         public string ENV_NAME { get; set; }
 
         [StringLength(255)]
