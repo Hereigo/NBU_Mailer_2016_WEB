@@ -140,6 +140,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TEMP_TEST.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="!!!__TODO__!!!.txt" />
@@ -152,6 +153,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ConnectionStrings.config" />
+    <None Include="Properties\PublishProfiles\164_NBU_2016.pubxml" />
     <None Include="Properties\PublishProfiles\164_nbu_mvc4_Debug.pubxml" />
     <None Include="Properties\PublishProfiles\164_nbu_mvc4_Release.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

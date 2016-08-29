@@ -25,8 +25,10 @@
         [Display(Name = "Кореспондент")]
         public string FNHOST { get; set; }
 
+        [Display(Name = "МФО")]
         public int? MFOM { get; set; }
 
+        [Display(Name = "ОКПО")]
         public int? OKPO { get; set; }
 
         [StringLength(30)]
