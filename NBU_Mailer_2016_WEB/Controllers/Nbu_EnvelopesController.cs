@@ -21,9 +21,13 @@ namespace NBU_Mailer_2016_WEB.Controllers
         {
             var nBU_ENVELOPES = db.NBU_ENVELOPES.Include(n => n.SPRUSNBU_BANKS);
 
+            // FOR LAST WEEK NOT MORE THAN 20 !!!
+
             DateTime fromDate = DateTime.Now.AddDays(-7);
 
-            var fewNBU_envelopes = from fewEnv in nBU_ENVELOPES where fewEnv.DATE_SENT > fromDate select fewEnv;
+            string ourAddress = "u1od";
+
+            var fewNBU_envelopes = from fewEnv in nBU_ENVELOPES where fewEnv.DATE_SENT > fromDate && !fewEnv.FROM.Contains(ourAddress) select fewEnv;
 
             var rez = fewNBU_envelopes.ToList().OrderByDescending(f => f.DATE_SENT).Take(20);
 
@@ -31,6 +35,31 @@ namespace NBU_Mailer_2016_WEB.Controllers
 
             //return View(nBU_ENVELOPES.ToList());
         }
+
+        public ActionResult Outdex()
+        {
+            // OUTBOX ARE IN ANDREW-BASE + Table_NbuOutbox !!!!!!
+            // OUTBOX ARE IN ANDREW-BASE + Table_NbuOutbox !!!!!!
+            // OUTBOX ARE IN ANDREW-BASE + Table_NbuOutbox !!!!!!
+            // OUTBOX ARE IN ANDREW-BASE + Table_NbuOutbox !!!!!!
+
+            var nBU_ENVELOPES = db.NBU_ENVELOPES.Include(n => n.SPRUSNBU_BANKS);
+
+            // FOR LAST HALF OF YEAR !!!
+
+            DateTime fromDate = DateTime.Now.AddMonths(-6);
+
+            string ourAddress = "u1od";
+
+            var fewNBU_envelopes = from fewEnv in nBU_ENVELOPES where fewEnv.DATE_SENT > fromDate && fewEnv.FROM.Contains(ourAddress) select fewEnv;
+
+            var rez = fewNBU_envelopes.ToList().OrderByDescending(f => f.DATE_SENT); //.Take(20);
+
+            return View(rez);
+
+            //return View(nBU_ENVELOPES.ToList());
+        }
+
 
         // GET: Nbu_Envelopes/Details/5
         public ActionResult Details(int? id)

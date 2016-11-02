@@ -10,6 +10,15 @@
         .navbar {
             background-color: #008469;
         }
+        .navbar-nav > li > a {
+            padding:5px;
+            margin:9px;
+            border:1px solid #008469;
+        }
+        .navbar-nav > li > a:hover {
+            border:1px solid white;
+            border-radius:3px;
+        }
 
         .navbar-inverse .navbar-brand {
             color: white;
@@ -25,20 +34,25 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("NBU-MAIL 2016", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Листи системи Пошта-НБУ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("SPRUSNBU", "Index", "SPRUSNBU_BANKS")</li>
-                    <li>@Html.ActionLink("ENVELOPES", "Index", "NBU_ENVELOPES")</li>
+                    <li>@Html.ActionLink("Довідник Банків", "Index", "SPRUSNBU_BANKS")</li>
+
+                    <li>@Html.ActionLink("Вхідні від Банків", "Index", "NBU_ENVELOPES")</li>
+
+                    <li>@Html.ActionLink("Вихідні від ДІУ", "Outdex", "NBU_ENVELOPES")</li>
+
                     @* FOR LOCAL TESTS *@
                     <li>
                         @Html.Partial("NoGitTestView")
                     </li>
                     @* FOR LOCAL TESTS *@
                 </ul>
-                <p class="nav navbar-text navbar-right">Hello, @User.Identity.Name!</p>
+                @*
+                    <p class="nav navbar-text navbar-right">Hello, @User.Identity.Name!</p>
+                *@
             </div>
         </div>
     </div>

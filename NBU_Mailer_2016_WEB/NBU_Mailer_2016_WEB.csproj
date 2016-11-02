@@ -140,7 +140,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TEMP_TEST.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="!!!__TODO__!!!.txt" />
@@ -152,7 +151,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="ConnectionStrings.config" />
+    <Content Include="ConnectionStrings.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Properties\PublishProfiles\164_NBU_2016.pubxml" />
     <None Include="Properties\PublishProfiles\164_nbu_mvc4_Debug.pubxml" />
     <None Include="Properties\PublishProfiles\164_nbu_mvc4_Release.pubxml" />
@@ -196,6 +197,7 @@
     <Content Include="Views\Nbu_Envelopes\Edit.cshtml" />
     <Content Include="Views\Nbu_Envelopes\Index.cshtml" />
     <Content Include="Views\Shared\NoGitTestView.cshtml" />
+    <Content Include="Views\Nbu_Envelopes\Outdex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
